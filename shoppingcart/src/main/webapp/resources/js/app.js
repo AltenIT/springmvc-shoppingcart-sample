@@ -14,7 +14,15 @@ App.config(function($locationProvider, $routeProvider) {
 	        templateUrl: 'resources/partials/shoppingcartviewer.html',
 	        controller: 'ShoppingCartViewerCtrl'
 	    })
-		.when('/shoppingcartviewer3', {
+        .when('/shoppingcartviewer3', {
+            templateUrl: 'resources/partials/shoppingcartviewer.html',
+            controller: 'ShoppingCartViewerCtrl'
+        })
+        .when('/shoppingcartviewer4', {
+                    templateUrl: 'resources/partials/shoppingcartviewer.html',
+                    controller: 'ShoppingCartViewerCtrl'
+                })
+		.when('/viewcart', {
 	        templateUrl: 'resources/partials/shoppingcartviewer.html',
 	        controller: 'ShoppingCartViewerCtrl'
 	    });

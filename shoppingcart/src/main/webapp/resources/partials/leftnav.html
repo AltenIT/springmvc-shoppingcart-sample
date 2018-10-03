@@ -1,10 +1,38 @@
-
 <div class="sidebar-nav">
     <ul class="nav nav-list">
     	<br/>
     	<br/>
-    	<br/>
-        <li class="nav-header">Shopping Buckets Inputs</li>
+
+		<button onclick="myFunction('1 Pills at 10.09')">Add Pills</button>
+		<button onclick="myFunction('1 Perfume at 7.50')">Add Perfume</button>
+
+		<script type="text/javascript">
+		function myFunction(stringPassed) {
+			// Post a user
+			var url = "http://localhost:8888/shoppingcart/addcart";
+
+			<!--var data = {};-->
+			<!--data.firstname = "John";-->
+			<!--data.lastname  = "Snow";-->
+			<!--var json = JSON.stringify(data);-->
+
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+			<!--xhr.onload = function () {-->
+				<!--var users = JSON.parse(xhr.responseText);-->
+				<!--if (xhr.readyState == 4 && xhr.status == "201") {-->
+					<!--console.table(users);-->
+				<!--} else {-->
+					<!--console.error(users);-->
+				<!--}-->
+			<!--}-->
+			xhr.send(stringPassed);
+		}
+		</script>
+
+
+		<li class="nav-header">Shopping Buckets Inputs</li>
         <li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer1')]">
         	<a href="#/shoppingcartviewer1">Bucket #1</a>
     	</li>
@@ -14,5 +42,12 @@
     	<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer3')]">
         	<a href="#/shoppingcartviewer3">Bucket #3</a>
     	</li>
+		<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer4')]">
+			<a href="#/shoppingcartviewer4">Bucket #4</a>
+		</li>
+		<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer4')]">
+			<a href="viewcart">View runtime Cart</a>
+		</li>
+
     </ul>
 </div><!--/.well -->

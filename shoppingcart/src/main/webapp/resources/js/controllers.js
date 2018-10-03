@@ -45,6 +45,20 @@
                 });
         };
 
+        $scope.viewPurchaseReceipt1 = function() {
+            $http({
+                url: 'addcart/',
+                method: "POST",
+                body: "1 pills imported at 99.12",
+                headers: {'Content-Type': 'application/json'}
+            }).success(function (data, status, headers, config) {
+                    $scope.purcahseReceipt = data;
+                    console.log($scope.purcahseReceipt);
+                }).error(function (data, status, headers, config) {
+                    $scope.errorResponse = data;
+                });
+        };
+
         $scope.loadShoppingBucket = function() {
         	$http({
                 url: 'loadcart/'+$scope.shoppingBucket,
@@ -56,7 +70,6 @@
                     $scope.errorResponse = data;
                 });
         };
-
         $scope.init();
     });
 
