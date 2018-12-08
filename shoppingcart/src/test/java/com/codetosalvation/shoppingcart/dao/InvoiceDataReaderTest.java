@@ -29,8 +29,8 @@ public class InvoiceDataReaderTest {
 	@Test(expected=ResourceNotFoundException.class)
 	public void testReadForInvalidBucketName() {
 		logger.debug("Testing InvoiceDataReader read operation");
-		logger.debug("Reading input bucket #1");
-		Resource resource = new ClassPathResource("data/input4");
+		logger.debug("Reading input bucket #5");
+		Resource resource = new ClassPathResource("data/input5");
 		reader.read(resource);
 	}
 
