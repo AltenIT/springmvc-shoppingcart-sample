@@ -6,34 +6,25 @@ var App = angular.module('ShoppingCart', []);
 
 App.config(function($locationProvider, $routeProvider) {
 	$routeProvider
-		.when('/shoppingcartviewer1', {
-	        templateUrl: 'resources/partials/shoppingcartviewer.html',
+		.when('/viewcart', {
+	        templateUrl: 'resources/partials/cart.html',
 	        controller: 'ShoppingCartViewerCtrl'
 	    })
-		.when('/shoppingcartviewer2', {
-	        templateUrl: 'resources/partials/shoppingcartviewer.html',
-	        controller: 'ShoppingCartViewerCtrl'
-	    })
-        .when('/shoppingcartviewer3', {
-            templateUrl: 'resources/partials/shoppingcartviewer.html',
+	    .when('/report', {
+            templateUrl: 'resources/partials/report.html',
             controller: 'ShoppingCartViewerCtrl'
         })
-        .when('/shoppingcartviewer4', {
-                    templateUrl: 'resources/partials/shoppingcartviewer.html',
-                    controller: 'ShoppingCartViewerCtrl'
-                })
-		.when('/viewcart', {
-	        templateUrl: 'resources/partials/shoppingcartviewer.html',
+		.when('/shop', {
+	        templateUrl: 'resources/partials/shop.html',
 	        controller: 'ShoppingCartViewerCtrl'
 	    });
 
 
-	$routeProvider.otherwise({redirectTo: '/shoppingcartviewer1'});
+	$routeProvider.otherwise({redirectTo: '/shop'});
 });
 
 App.run(function($rootScope, $location){
 	  $rootScope.menuActive = function(url, exactMatch){
-	  	//alert(url+" "+exactMatch);
 	    if (exactMatch){
 	      return $location.path() == url;
 	    }

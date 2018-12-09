@@ -3,37 +3,24 @@
     	<br/>
     	<br/>
 
-		<button onclick="myFunction('1 Pills at 10.09')">Add Pills</button>
-		<button onclick="myFunction('1 Perfume at 7.50')">Add Perfume</button>
-
-		<script type="text/javascript">
-		function myFunction(stringPassed) {
-			// Post a user
-			var url = "/shoppingcart/addcart";
-			var xhr = new XMLHttpRequest();
-			xhr.open("POST", url, true);
-			xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-
-			xhr.send(stringPassed);
-		}
-		</script>
-
-
 		<li class="nav-header">Shopping Buckets Inputs</li>
-        <li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer1')]">
-        	<a href="#/shoppingcartviewer1">Bucket #1</a>
-    	</li>
-    	<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer2')]">
-        	<a href="#/shoppingcartviewer2">Bucket #2</a>
-    	</li>
-    	<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer3')]">
-        	<a href="#/shoppingcartviewer3">Bucket #3</a>
-    	</li>
-		<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer4')]">
-			<a href="#/shoppingcartviewer4">Bucket #4</a>
+        <!--<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer1')]">-->
+        	<!--<a href="#/shoppingcartviewer1">Bucket #1</a>-->
+    	<!--</li>-->
+    	<!--<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer2')]">-->
+        	<!--<a href="#/shoppingcartviewer2">Bucket #2</a>-->
+    	<!--</li>-->
+    	<!--<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer3')]">-->
+        	<!--<a href="#/shoppingcartviewer3">Bucket #3</a>-->
+    	<!--</li>-->
+		<li ng-class="{true: 'active'}[menuActive('/shop')]">
+			<a href="#/shop">Shop</a>
 		</li>
-		<li ng-class="{true: 'active'}[menuActive('/shoppingcartviewer4')]">
-			<a href="viewcart">View runtime Cart</a>
+		<li ng-class="{true: 'active'}[menuActive('/cart')]">
+			<a href="#/viewcart">Cart</a>
+		</li>
+		<li ng-class="{true: 'active'}[menuActive('/report')]">
+			<a href="#/report">Report</a>
 		</li>
 
     </ul>

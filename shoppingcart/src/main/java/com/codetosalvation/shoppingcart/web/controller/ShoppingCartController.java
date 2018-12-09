@@ -65,7 +65,7 @@ public class ShoppingCartController {
 	@RequestMapping("viewcart")
 	public @ResponseBody
 	List<ShoppingCartLineItem> viewShoppingCart() {
-		logger.debug("Retrieving cart");
+		logger.debug("Retrieving cart " + shoppingCartService.getShoppingCart().getLineItems().size());
 		return shoppingCartService.getShoppingCart().getLineItems();
 	}
 
