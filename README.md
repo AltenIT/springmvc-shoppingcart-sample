@@ -65,9 +65,6 @@ To get started, follow below steps:
 
 ## Services Details
 
-Variables
-- Server address, for example localhost
-- Service port, for example 8090
 
 
 1. Loads bucket to shopping cart
