@@ -105,7 +105,7 @@ Variables
 	Sample Response
 	```json
 	{
-	   lineItems:[
+	   "lineItems":[
 	      {
 	         "product":{
 	            "id":0,
@@ -118,8 +118,8 @@ Variables
 	         "totalCost":12.49
 	      }
 	   ],
-	   salesTax:1.5,
-	   total:29.83
+	   "salesTax":1.5,
+	   "total":29.83
 	}
 	```
 
