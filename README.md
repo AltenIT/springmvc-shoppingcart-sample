@@ -15,21 +15,21 @@ The following items added to the basket:
 
 ```text
 Basket:
-1 imported bottle of perfume at 27.99
-1 bottle of perfume at 18.99
-1 packet of headache pills at 9.75
-1 box of imported chocolates at 11.25
+	1 imported bottle of perfume at 27.99
+	1 bottle of perfume at 18.99
+	1 packet of headache pills at 9.75
+	1 box of imported chocolates at 11.25
 ```
 Will produce the following purchase report:
 	
 ```
 Report:
-		1 imported bottle of perfume: 32.19
-		1 bottle of perfume: 20.89
-		1 packet of headache pills: 9.75
-		1 imported box of chocolates: 11.85
-		Sales Taxes: 6.70
-		Total: 74.68
+	1 imported bottle of perfume: 32.19
+	1 bottle of perfume: 20.89
+	1 packet of headache pills: 9.75
+	1 imported box of chocolates: 11.85
+	Sales Taxes: 6.70
+	Total: 74.68
 ```
 ## Features
 To be updated:
@@ -107,37 +107,15 @@ Variables
 	{
 	   lineItems:[
 	      {
-	         product:{
-	            id:0,
-	            description:"book",
-	            price:12.49,
-	            imported:false
+	         "product":{
+	            "id":0,
+	            "description":"book",
+	            "price":12.49,
+	            "imported":false
 	         },
-	         quantity:1,
-	         amount:12.49,
-	         totalCost:12.49
-	      },
-	      {
-	         product:{
-	            id:0,
-	            description:"music CD",
-	            price:14.99,
-	            imported:false
-	         },
-	         quantity:1,
-	         amount:14.99,
-	         totalCost:16.49
-	      },
-	      {
-	         product:{
-	            id:0,
-	            description:"chocolate bar",
-	            price:0.85,
-	            imported:false
-	         },
-	         quantity:1,
-	         amount:0.85,
-	         totalCost:0.84
+	         "quantity":1,
+	         "amount":12.49,
+	         "totalCost":12.49
 	      }
 	   ],
 	   salesTax:1.5,
