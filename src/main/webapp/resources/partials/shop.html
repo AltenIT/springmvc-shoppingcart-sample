@@ -1,0 +1,157 @@
+    <!-- MODAL TRIGGER -->
+    <button class="btn btn-info" data-toggle="modal" data-target="#myModal" ng-click="viewPurchaseReceipt()">Overzicht bestelde product(en)</button>
+
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Overzicht bestelde product(en)</h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <section class="row-fluid">
+                <li ng-repeat="item in purchaseReceipt.lineItems">
+                  {{ item.quantity }}&nbsp;{{ item.product.description }}:
+                  {{ item.totalCost | number: 2 }}
+                </li>
+              </ul>
+            </section>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
+<div class="container">
+  <div class="card-columns">
+      <div class="card">
+          <img
+            class="card-img-top img-fluid"
+            src="resources/img/pills.jpg"
+            alt=""
+          />
+          <div class="card-body">
+            <h4 class="card-title">Pill</h4>
+            <p class="card-text">
+                Multivitamine Plus bevat maar liefst 44 verschillende vitamines.
+            </p>
+            <button class="add-item" onclick="myFunction('1 Pills at 10.09')">
+              toevoegen
+            </button>
+            <p class="card-text"></p>
+          </div>
+        </div>
+    <div class="card">
+      <img
+        class="card-img-top img-fluid"
+        src="resources/img/perfume.jpg"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">Parfum</h4>
+        <p class="card-text">
+            Deze Eau de Toilette, een verslavende oriëntaals houtachtige geur.
+        </p>
+        <button class="add-item" onclick="myFunction('1 Perfume at 7.50')">
+           toevoegen
+        </button>
+        <p class="card-text"></p>
+      </div>
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top img-fluid"
+        src="resources/img/CD.jpg"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">CD</h4>
+        <p class="card-text">
+            Een cd met alleen de allergrootste hits van 2018.
+        </p>
+        <button class="add-item" onclick="myFunction('1 CD at 14.99')">
+            toevoegen
+        </button>
+        <p class="card-text"></p>
+      </div>
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top img-fluid"
+        src="resources/img/book.jpg"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">Boek</h4>
+        <p class="card-text">
+            Een bondige opfris- en bijspijkercursus wiskunde.
+        </p>
+        <button class="add-item" onclick="myFunction('1 book at 12.49')">
+            toevoegen
+        </button>
+        <p class="card-text"></p>
+      </div>
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top img-fluid"
+        src="resources/img/chocolatebox.jpg"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">Chocolade box</h4>
+        <p class="card-text">
+            Een ultieme chocoladebeleving met een flinke dosis gevoel.
+        </p>
+        <button class="add-item" onclick="myFunction('1 chocolate box at 11.25')">
+           toevoegen
+        </button>
+        <p class="card-text"></p>
+      </div>
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top img-fluid"
+        src="resources/img/shirt.jpg"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">T-shirt</h4>
+        <p class="card-text">
+            Dit groene T-shirt is geinspireerd door het Amerikaanse leger.
+        </p>
+        <button class="add-item" onclick="myFunction('1 T-shirt at 20.00')">
+           toevoegen
+        </button>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+1 imported bottle of perfume at 27.99
+1 bottle of perfume at 18.99
+1 packet of headache pills at 9.75
+1 box of imported chocolates at 11.25
+1 imported book at 12.49
+1 imported box of chocolates at 10.00
+1 imported bottle of perfume at 47.50
+1 book at 12.49
+1 music CD at 14.99
+1 chocolate bar at 0.85
+-->
+  <script type="text/javascript">
+    function myFunction(stringPassed) {
+      // Post a user
+      var url = "/shoppingcart/addcart";
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+
+      xhr.send(stringPassed);
+    }
+  </script>
+</section>
