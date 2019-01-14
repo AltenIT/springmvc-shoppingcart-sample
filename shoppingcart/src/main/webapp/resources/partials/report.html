@@ -1,25 +1,21 @@
+<div class="page-header"><h1>Purchase Report</h1></div>
 
-<div class="page-header">
-	<h1>Purchase Report</h1>
-</div>
-
-<section  class="row-fluid">
-
-
-	<h3></h3>
-	<ul>
-		<li ng-repeat="item in purchaseReceipt.lineItems">
-			{{item.quantity}}&nbsp;{{item.product.description}}:
-			{{item.totalCost| number:2}}
-		</li>
-	</ul>
-	<ul class="unstyled">
-		<li><h4>Sales Taxes: {{purchaseReceipt.salesTax | number:2}}</h4></li>
-	</ul>
-	<ul class="unstyled">
-		<li><h4>Total: {{purchaseReceipt.total | number:2}}</h4></li>
-	</ul>
-
-
-
+<section class="row-fluid">
+  <h3></h3>
+  <ul>
+    <li ng-repeat="item in purchaseReceipt.lineItems">
+      {{ item.quantity }}&nbsp;{{ item.product.description }}:
+      {{ item.totalCost | number: 2 }}
+    </li>
+  </ul>
+  <ul class="unstyled">
+    <li>
+      <h4>Sales Taxes: {{ purchaseReceipt.salesTax | number: 2 }}</h4>
+    </li>
+  </ul>
+  <ul class="unstyled">
+    <li>
+      <h4>Total: {{ purchaseReceipt.total | number: 2 }}</h4>
+    </li>
+  </ul>
 </section>
