@@ -47,7 +47,6 @@
     <br>
     <br>
     <br>
-    <br>
 
       <!-- Begin page content -->
       <!-- <div class="container-fluid">

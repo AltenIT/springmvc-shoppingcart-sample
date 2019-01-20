@@ -23,7 +23,7 @@ App.config(function($locationProvider, $routeProvider) {
       controller: "ShoppingCartViewerCtrl"
     });
 
-  $routeProvider.otherwise({ redirectTo: "/shop" });
+  $routeProvider.otherwise({ redirectTo: "/home" });
 });
 
 App.run(function($rootScope, $location) {

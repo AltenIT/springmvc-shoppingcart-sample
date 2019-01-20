@@ -1,3 +1,54 @@
-<div class="page-header"><h1>Home</h1></div>
+<ol class="breadcrumb">
+        <li class="breadcrumb-item active">Home</li>
+    </ol>
 
-<section class="row-fluid"></section>
+<body>
+        <header>
+<h1 class="display-3 text-center my-4">ShoppingCart Application</h1>
+<div class="container">
+<div><strong>Business rules </strong> </div>
+<div><p>In this example SUT there are some business rules, find them listed below:</p> </div>
+
+<ul>
+        <li>Basic sales tax is applicable at a rate of 10% on all goods,
+                except books, food, and medical products that are exempt.</li>
+        <li>Import duty is an
+                additional sales tax applicable on all imported goods at a rate of 5%, with no
+                exemptions.</li>
+        <li>When I purchase items I receive a receipt that lists the name of all
+                the items and their price (including tax), finishing with the total cost of the
+                items, and the total amounts of sales tax paid. The rounding rules for sales tax
+                are that for a tax rate of n%, a shelf price of p contains np/100 rounded up to
+                the nearest 0.05 amount of sales tax.</li>
+</ul>
+
+<div><strong>Example</strong> </div>
+<p>The following items added to the
+basket: </p>
+
+Basket: 
+<ul>
+    <li>1 imported bottle of perfume at 27.99</li>
+    <li>1 bottle of perfume at 18.99</li>
+    <li>1 packet of headache pills at 9.75</li>
+    <li>1 box of imported chocolates at 11.25</li>
+    <li>1 imported bottle of perfume at 27.99</li>
+</ul>
+   
+<p>Will produce the following purchase report: </p> 
+
+Report:
+<ul>
+<li>1 imported bottle of perfume: 32.19</li> 
+<li>1 bottle of perfume: 20.89</li>
+<li>1 packet of headache pills: 9.75</li>
+<li>1 imported box of chocolates: 11.85</li>
+<li>Sales Taxes: 6.70</li>
+<li>Total: 74.68</li>
+</ul>
+
+<p>https://github.com/AltenIT/springmvc-shoppingcart-sample</p>
+
+</header>
+</body>
+</div>

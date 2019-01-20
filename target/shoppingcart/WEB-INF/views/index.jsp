@@ -9,10 +9,9 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <link
-      href="resources/css/bootstrap/4.1.3/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="resources/css/bootstrap/4.1.3/bootstrap.min.css" rel="stylesheet"/>
+
+    <link href="resources/css/app.css" rel="stylesheet"/>
   </head>
 
   <body>
@@ -36,9 +35,8 @@
         <ul class="navbar-nav">
           <li class="nav-item" ng-class="{true: 'active'}[menuActive('/home')]"><a class="nav-link" href="#/home">Home</a></li>
           <li class="nav-item" ng-class="{true: 'active'}[menuActive('/shop')]"><a class="nav-link" href="#/shop">Shop</a></li>
-          <li class="nav-item" ng-class="{true: 'active'}[menuActive('/viewcart')]"><a class="nav-link" href="#/viewcart">Winkelwagen</a></li>
+          <li class="nav-item" ng-class="{true: 'active'}[menuActive('/cart')]"><a class="nav-link" href="#/viewcart">Winkelwagen</a></li>
           <li class="nav-item" ng-class="{true: 'active'}[menuActive('/report')]"><a class="nav-link" href="#/report">Rapport</a></li>
-          <li class="nav-item" ng-class="{true: 'active'}[menuActive('/report')]"><a class="nav-link" href="#/report">Contact</a></li>
         </ul>
       </div>
       <span class="navbar-text small mt-1 w-50 text-right order-1 order-md-last">
