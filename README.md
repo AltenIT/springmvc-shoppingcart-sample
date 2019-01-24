@@ -73,7 +73,7 @@ To get started, please complete the following steps:
 2. Extract the file to a folder
 3. Go to the exracted project root folder
 4. Run this command from Terminal/Command Line - "run mvn clean install mvn jetty:run" and wait for server to start successfully
-5. Open any browser and go to this url - http://<server address>:<port>/shoppingcart/
+5. Open any browser and go to this url - http://localhost:8090/shoppingcart/
 
 ## Technology Used
 
@@ -87,18 +87,18 @@ Variables
 - Service port <port>, for example 8080
 
 1. Loads bucket to shopping cart
-   URL Pattern - GET http://<server address>:<port>/shoppingcart/loadcart/{bucket}
-   Sample URL - GET http://<server address>:<port>/shoppingcart/loadcart/1
+   URL Pattern - GET http://localhost:8090/shoppingcart/loadcart/{bucket}
+   Sample URL - GET http://localhost:8090/shoppingcart/loadcart/1
    Bucket values : 1, 2, 3
 
    Response - HTTP 200
 
-2. GET http://<server address>:<port>/shoppingcart/viewcart
+2. GET http://localhost:8090/shoppingcart/viewcart
 
 3. View Bucket input data
 
-   URL Pattern - GET http://<server address>:<port>/shoppingcart/viewbucketinput?bucket={bucket}
-   Sample URL - GET http://<server address>:<port>/shoppingcart/viewbucketinput?bucket=1
+   URL Pattern - GET http://localhost:8090/shoppingcart/viewbucketinput?bucket={bucket}
+   Sample URL - GET http://localhost:8090/shoppingcart/viewbucketinput?bucket=1
 
    Bucket values : 1, 2, 3
 
@@ -110,7 +110,7 @@ Variables
 
 4) View purchase receipt ( this service will return data that is currently stored in shopping cart)
 
-   URL pattern - http://<server address>:<port>/shoppingcart/report/purchase
+   URL pattern - http://localhost:8090/shoppingcart/report/purchase
 
    Sample Response
 
@@ -157,16 +157,16 @@ Variables
    ```
 
 5) Add new line items to shopping cart -
-   URL Pattern - POST http://<server address>:<port>/shoppingcart/addcart
+   URL Pattern - POST http://localhost:8090/shoppingcart/addcart
    Request payload sample
 
    ```text
    1 music MP3 CD1 at 20.00
    ```
 
-   After adding data, please use http://<server address>:<port>/shoppingcart/report/purchase to view data in shopping cart
+   After adding data, please use http://localhost:8090/shoppingcart/report/purchase to view data in shopping cart
 
-6) Error response - In case of exception, exception object will be converted to ErrorResponse object and return appropriate HTTP error code back to client. Sample invalid ERROR URL - http://<server address>:<port>/shoppingcart/loadcart/4
+6) Error response - In case of exception, exception object will be converted to ErrorResponse object and return appropriate HTTP error code back to client. Sample invalid ERROR URL - http://localhost:8090/shoppingcart/loadcart/4
 
    Sample Error response
 
