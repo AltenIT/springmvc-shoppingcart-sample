@@ -1,0 +1,44 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item active">Rapport</li>
+</ol>
+
+<section class="row-fluid">
+  <section class="row-fluid">
+    <div class="page-header text-center"><h1>Rapport</h1></div>
+
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Aantal</th>
+            <th>Product</th>
+            <th>Geimporteerd</th>
+            <th>Prijs</th>
+            <th>Prijs met belasting</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in purchaseReceipt.lineItems">
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.description }}</td>
+            <td>{{ item.product.imported }}</td>
+            <td>{{ item.product.price }}</td>
+            <td>{{ item.totalCost | number: 2 }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="unstyled">
+          <li>
+            <h4>Sales Taxes: {{ purchaseReceipt.salesTax | number: 2 }}</h4>
+          </li>
+        </ul>
+        <ul class="unstyled">
+          <li>
+            <h4>Total: {{ purchaseReceipt.total | number: 2 }}</h4>
+          </li>
+        </ul>
+      </section>
+      
+    </div>
+  </section>

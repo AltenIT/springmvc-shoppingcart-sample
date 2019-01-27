@@ -1,0 +1,178 @@
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Shop</li>
+    </ol>
+
+    <div class="alert alert-success" id="alertProductAdded" style="visibility:hidden;">
+        <p class="text-center">
+        <strong>Een product is toegevoegd!</strong>
+        <span id="productSpan"> </span>
+        </p> 
+    </div>
+
+<div class="container">
+    <ul class="list-group mb-5">
+        <li class="list-group-item  list-group-item-info">Geïmporteerde producten</li>
+         <br>
+  <div class="card-columns">
+      <div class="card">
+          <img
+            class="card-img-top img-fluid"
+            src="resources/img/pills.jpg"
+            alt=""
+          />
+          <div class="card-body">
+            <h4 class="card-title">Pill</h4>
+            <p class="card-text">
+                Multivitamine Plus bevat maar liefst 44 verschillende vitamines.
+            </p>
+            <button class="add-item" onclick="myFunction('1 imported pills at 10.09'); productWeergeven('Geïmporteerde Pill', 10.09);">
+              toevoegen
+            </button>
+          </div>
+          <div class="card-footer text-muted">
+              Prijs: €10.09
+          </div>
+        </div>
+    <div class="card">
+      <img
+        class="card-img-top img-fluid"
+        src="resources/img/perfume.jpg"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">Parfum</h4>
+        <p class="card-text">
+            Deze Eau de Toilette, een verslavende oriëntaals houtachtige geur.
+        </p>
+        <button class="add-item" onclick="myFunction('1 imported Perfume at 50.55'); productWeergeven('Geïmporteerde Parfum', 50.55);">
+           toevoegen
+        </button>
+      </div>
+      <div class="card-footer text-muted">
+          Prijs: €50.55
+      </div>
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top img-fluid"
+        src="resources/img/Book.jpg"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">Boek</h4>
+        <p class="card-text">
+            Een bondige opfris- en bijspijkercursus wiskunde.
+        </p>
+        <button class="add-item" onclick="myFunction('1 imported book at 21.27'); productWeergeven('Geïmporteerde boek', 21.27);">
+            toevoegen
+        </button>
+        <p class="card-text"></p>
+      </div>
+      <div class="card-footer text-muted">
+          Prijs: €21.27
+      </div>
+    </div>
+    </ul>
+  </div>
+
+  <div class="container">
+      <ul class="list-group mb-5">
+          <li class="list-group-item  list-group-item-info">Niet geïmporteerde producten</li>
+           <br>
+    <div class="card-columns">
+        <div class="card">
+            <img
+              class="card-img-top img-fluid"
+              src="resources/img/CD.jpg"
+              alt=""
+            />
+      <div class="card-body">
+        <h4 class="card-title">CD</h4>
+        <p class="card-text">
+            Een cd met alleen de allergrootste hits van 2018.
+        </p>
+        <button class="add-item" onclick="myFunction('1 CD at 14.99'); productWeergeven('CD', 14.99);">
+            toevoegen
+        </button>
+        <p class="card-text"></p>
+      </div>
+      <div class="card-footer text-muted">
+          Prijs: €14.99
+      </div>
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top img-fluid"
+        src="resources/img/chocolatebox.jpg"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">Chocolade box</h4>
+        <p class="card-text">
+            Een ultieme chocoladebeleving met een flinke dosis gevoel.
+        </p>
+        <button class="add-item" onclick="myFunction('1 chocolate box at 11.25'); productWeergeven('Chocolade box', 11.25);">
+           toevoegen
+        </button>
+        <p class="card-text"></p>
+      </div>
+      <div class="card-footer text-muted">
+          Prijs: €11.25
+      </div>
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top img-fluid"
+        src="resources/img/shirt.jpg"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">T-shirt</h4>
+        <p class="card-text">
+            Dit groene T-shirt is geinspireerd door het Amerikaanse leger.
+        </p>
+        <button class="add-item" onclick="myFunction('1 T-shirt at 20.03'); productWeergeven('T-shirt', 20.03);">
+           toevoegen
+        </button>
+        <p class="card-text"></p>
+      </div>
+      <div class="card-footer text-muted">
+          Prijs: €20.03
+      </div>
+    </div>
+  </ul>
+  </div>
+
+<!--
+1 imported bottle of perfume at 27.99
+1 bottle of perfume at 18.99
+1 packet of headache pills at 9.75
+1 box of imported chocolates at 11.25
+1 imported book at 12.49
+1 imported box of chocolates at 10.00
+1 imported bottle of perfume at 47.50
+1 book at 12.49
+1 music CD at 14.99
+1 chocolate bar at 0.85
+-->
+  <script type="text/javascript">
+    function myFunction(stringPassed) {
+      // Post a user
+      var url = "/shoppingcart/addcart";
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+
+      xhr.send(stringPassed);
+    }
+
+    function productWeergeven(product, prijs) {
+       $('#alertProductAdded').fadeIn(1000);
+       document.getElementById("alertProductAdded").style.visibility = "visible";
+       document.getElementById('productSpan').innerHTML = '1 ' + product + ' ter waarde van ' + prijs;
+}
+  </script>
+</section>
