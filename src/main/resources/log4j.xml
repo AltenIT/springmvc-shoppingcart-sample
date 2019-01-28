@@ -19,7 +19,7 @@
     <!-- Preserve messages in a local file -->
     <!-- ================================= -->
      <appender name="file" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="/Users/ddakshna/application-javaassist.log"/>
+        <param name="File" value="./application.log"/>
         <param name="append" value="true"/>
         <param name="MaxFileSize" value="10MB" />
 		<param name="MaxBackupIndex" value="10" />
