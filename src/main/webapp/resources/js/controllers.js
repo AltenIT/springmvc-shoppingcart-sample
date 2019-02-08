@@ -51,6 +51,21 @@
           });
       };
 
+      $scope.loadCart = function() {
+        $http({
+          url: "viewcart",
+          method: "GET",
+          headers: { "Content-Type": "application/json" }
+        })
+          .success(function(data, status, headers, config) {
+            console.log("test " + data);
+            $scope.cartItems = data;
+          })
+          .error(function(data, status, headers, config) {
+            $scope.errorResponse = data;
+          });
+      };
+
       $scope.viewPurchaseReceipt1 = function() {
         $http({
           url: "addcart/",
@@ -67,10 +82,11 @@
           });
       };
 
-      $scope.viewPurchaseReceipt2 = function() {
+      $scope.viewPurchaseReceipt3 = function() {
         $http({
-          url: "home",
-          method: "GET",
+          url: "deletecart/",
+          method: "POST",
+          body: "test",
           headers: { "Content-Type": "application/json" }
         })
           .success(function(data, status, headers, config) {
@@ -82,15 +98,15 @@
           });
       };
 
-      $scope.loadCart = function() {
+      $scope.viewPurchaseReceipt2 = function() {
         $http({
-          url: "viewcart",
+          url: "home",
           method: "GET",
           headers: { "Content-Type": "application/json" }
         })
           .success(function(data, status, headers, config) {
-            //console.log('test '+data);
-            $scope.cartItems = data;
+            console.log($scope.purchaseReceipt);
+            $scope.purchaseReceipt = data;
           })
           .error(function(data, status, headers, config) {
             $scope.errorResponse = data;

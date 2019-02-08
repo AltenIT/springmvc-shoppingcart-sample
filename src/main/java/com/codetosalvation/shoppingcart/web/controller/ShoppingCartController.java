@@ -75,4 +75,10 @@ public class ShoppingCartController {
 		logger.debug("Getting bucket input");
 		return shoppingCartService.getBucketInput(bucket);
 	}
+
+	@RequestMapping(value = "/deletecart", method = RequestMethod.POST)
+	public @ResponseBody void removeCart(@RequestBody String item) {
+		logger.info("Removed cartitem! " + item);
+		shoppingCartService.getShoppingCart().removeItem(item);
+	}
 }

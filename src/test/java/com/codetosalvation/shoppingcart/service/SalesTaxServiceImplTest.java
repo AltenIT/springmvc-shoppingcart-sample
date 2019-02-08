@@ -1,7 +1,5 @@
 package com.codetosalvation.shoppingcart.service;
 
-import static org.junit.Assert.fail;
-
 import com.codetosalvation.shoppingcart.dao.InvoiceDataReader;
 import com.codetosalvation.shoppingcart.model.InvoiceFileLineItem;
 import com.codetosalvation.shoppingcart.model.ShoppingCart;
@@ -21,7 +19,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-
 public class SalesTaxServiceImplTest {
 	Logger logger = LoggerFactory.getLogger(SalesTaxServiceImplTest.class);
 	SalesTaxServiceImpl impl = new SalesTaxServiceImpl();
@@ -29,6 +26,7 @@ public class SalesTaxServiceImplTest {
 	InvoiceDataReader reader = new InvoiceDataReader();
 
 	ShoppingCart shoppingCart = new ShoppingCart();
+
 	@Before
 	public void setup() throws Exception {
 
@@ -36,7 +34,7 @@ public class SalesTaxServiceImplTest {
 		taxRateServiceImpl.setImportedTaxRate(.05d);
 		taxRateServiceImpl.setExemptTaxRate(0.0d);
 		taxRateServiceImpl.afterPropertiesSet();
-		taxRateServiceImpl.setExemptItemsList(new String[]{"chocolate","pills","book"});
+		taxRateServiceImpl.setExemptItemsList(new String[] { "chocolate", "pills", "book" });
 
 		impl.setTaxRateService(taxRateServiceImpl);
 
@@ -45,7 +43,7 @@ public class SalesTaxServiceImplTest {
 		InvoiceDataParser parser = new InvoiceDataParser(lines);
 		List<InvoiceFileLineItem> lineItems = parser.parseData();
 
-		for(InvoiceFileLineItem invoiceFileLineItem : lineItems) {
+		for (InvoiceFileLineItem invoiceFileLineItem : lineItems) {
 			shoppingCart.addLineItem(invoiceFileLineItem.toShoppingCartLineItem());
 		}
 
@@ -54,15 +52,15 @@ public class SalesTaxServiceImplTest {
 	@Test
 	public void testCalculateTotalTaxes() {
 		double totalTaxes = impl.calculateTotalTaxes(shoppingCart);
-		logger.info("Total Taxes for bucket #1: "+totalTaxes);
-		Assert.assertEquals(1.5, totalTaxes,0.0);
+		logger.info("Total Taxes for bucket #1: " + totalTaxes);
+		Assert.assertEquals(1.5, totalTaxes, 0.0);
 	}
 
 	@Test
 	public void testCalculateTotalCost() {
 		double totalCost = impl.calculateTotalCost(shoppingCart);
-		logger.info("Total Cost for bucket #1: "+NumberUtils.round(totalCost));
-		Assert.assertEquals(29.83, NumberUtils.round(totalCost),0.0);
+		logger.info("Total Cost for bucket #1: " + NumberUtils.round(totalCost));
+		Assert.assertEquals(29.83, NumberUtils.round(totalCost), 0.0);
 	}
 
 	@Test
@@ -70,11 +68,11 @@ public class SalesTaxServiceImplTest {
 		impl.calculateTotalCost(shoppingCart);
 		List<ShoppingCartLineItem> lineItems = shoppingCart.getLineItems();
 
-		logger.info("Total Cost for line item #1: "+NumberUtils.round(lineItems.get(0).getTotalCost()));
-		logger.info("Total Cost for line item #2: "+NumberUtils.round(lineItems.get(1).getTotalCost()));
-		logger.info("Total Cost for line item #3: "+NumberUtils.round(lineItems.get(2).getTotalCost()));
-		Assert.assertEquals(12.49, NumberUtils.round(lineItems.get(0).getTotalCost()),0.0);
-		Assert.assertEquals(16.48, NumberUtils.round(lineItems.get(1).getTotalCost()),0.0);
-		Assert.assertEquals(0.83, NumberUtils.round(lineItems.get(2).getTotalCost()),0.0);
+		logger.info("Total Cost for line item #1: " + NumberUtils.round(lineItems.get(0).getTotalCost()));
+		logger.info("Total Cost for line item #2: " + NumberUtils.round(lineItems.get(1).getTotalCost()));
+		logger.info("Total Cost for line item #3: " + NumberUtils.round(lineItems.get(2).getTotalCost()));
+		Assert.assertEquals(12.49, NumberUtils.round(lineItems.get(0).getTotalCost()), 0.0);
+		Assert.assertEquals(16.48, NumberUtils.round(lineItems.get(1).getTotalCost()), 0.0);
+		Assert.assertEquals(0.83, NumberUtils.round(lineItems.get(2).getTotalCost()), 0.0);
 	}
 }

@@ -8,14 +8,17 @@
     <div class="page-header text-center"><h1>Rapport</h1></div>
 
     <div class="container">
+        <p class="text-sm-right"><span id="TotaalbelastingID">Totaal belasting: {{ purchaseReceipt.salesTax | number: 2 }} </span></p>
+        <p class="text-sm-right"><span id="TotaalprijsID">Totaal prijs: {{ purchaseReceipt.total | number: 2 }} </span></p>
       <table class="table">
         <thead>
           <tr>
             <th>Aantal</th>
             <th>Product</th>
-            <th>Geimporteerd</th>
+            <th>Geïmporteerd</th>
             <th>Prijs</th>
             <th>Prijs met belasting</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -25,20 +28,22 @@
             <td>{{ item.product.imported }}</td>
             <td>{{ item.product.price }}</td>
             <td>{{ item.totalCost | number: 2 }}</td>
+            <td><img class="img" src="resources/img/bin.png" onclick="deleteItem(this); window.location.reload()"></a></td>
           </tr>
         </tbody>
       </table>
-      <ul class="unstyled">
-          <li>
-            <h4>Sales Taxes: {{ purchaseReceipt.salesTax | number: 2 }}</h4>
-          </li>
-        </ul>
-        <ul class="unstyled">
-          <li>
-            <h4>Total: {{ purchaseReceipt.total | number: 2 }}</h4>
-          </li>
-        </ul>
+
       </section>
-      
     </div>
+    
+    <script type="text/javascript">
+      function deleteItem(stringPassed) {
+        var stringRow = stringPassed.parentNode.parentNode.rowIndex-1;
+        var url = "/shoppingcart/deletecart";
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        xhr.send(stringRow);
+      }
+    </script>
   </section>

@@ -12,9 +12,9 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
-@JsonIgnoreProperties(ignoreUnknown=true)
-public class ShoppingCart implements Serializable{
+@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ShoppingCart implements Serializable {
 
 	private static final long serialVersionUID = -1947132804983588610L;
 
@@ -27,7 +27,7 @@ public class ShoppingCart implements Serializable{
 	}
 
 	public void addLineItem(ShoppingCartLineItem lineItem) {
-		if(!lineItems.contains(lineItem)) {
+		if (!lineItems.contains(lineItem)) {
 			lineItems.add(lineItem);
 			subTotalCost = NumberUtils.round(subTotalCost + lineItem.calculateTotalPrice());
 		}
@@ -50,4 +50,8 @@ public class ShoppingCart implements Serializable{
 		lineItems.clear();
 	}
 
+	public void removeItem(String value) {
+		int index = Integer.parseInt(value);
+		lineItems.remove(index);
+	}
 }
