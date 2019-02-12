@@ -31,7 +31,7 @@ public class ReportController {
 	 * @return PurchaseReport contains shopping cart line items and sales tax total
 	 *         and total cost
 	 */
-	@RequestMapping
+	@RequestMapping("purchase")
 	public @ResponseBody PurchaseReport generatePurchaseReport() {
 		logger.debug("Generating purchse order receipt report");
 		return reportService.generatePurchaseReport();
