@@ -41,7 +41,7 @@
         var stringRow = stringPassed.parentNode.parentNode.rowIndex-1;
         var url = "/shoppingcart/deletecart";
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", url, true);
+        xhr.open("POST", url, false);
         xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
         xhr.send(stringRow);
       }
