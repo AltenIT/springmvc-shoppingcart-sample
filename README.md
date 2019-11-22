@@ -1,5 +1,8 @@
 # Shopping Cart Application
 
+## Todo
+- [ ] Split backend from frontend
+
 ## Problem definition
 
 In this example application we have some business rules, find them listed below:
